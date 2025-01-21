@@ -22,11 +22,12 @@ RUN apk update && apk add --no-cache \
     zsh \
     bash \
     tcsh \
-    nasm
+    nasm \
+    zig
 
-COPY install_fpc.sh /install_fpc.sh
-RUN chmod +x /install_fpc.sh
-RUN /install_fpc.sh > /fpc_installation.txt
+# COPY install_fpc.sh /install_fpc.sh
+# RUN chmod +x /install_fpc.sh
+# RUN /install_fpc.sh > /fpc_installation.txt
 
 # Verify installations
 RUN echo -n "gcc: " >> /installed_compilers.txt && \
